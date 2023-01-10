@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <title>PyScript</title>
+</head>
+
+<body>
+    <style>
+        #button {
+            width: 100px;
+            height: 50px;
+            background-color: green;
+            text-align: center;
+            line-height: 50px;
+            font-size: 1.4em;
+            color: white;
+        }
+
+        #input,
+        #output {
+            display: none;
+        }
+    </style>
+    <div id="button" onclick="clicked()">Submit</div>
+    <div id="input"></div>
+    <py-config style="display: none;">
+        packages = ["scikit-learn"]
+    </py-config>
+    <py-script src="./mnist.py"></py-script>
+    <py-script src="./pyscript.py"></py-script>
+    <script>
+        function clicked() {
+            console.log("Click DHJard");
+            document.getElementById("input").innerText = "100";
+        }
+    </script>
+</body>
+
+</html>

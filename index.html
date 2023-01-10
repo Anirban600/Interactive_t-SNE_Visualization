@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  <script src="https://unpkg.com/d3-3d/build/d3-3d.min.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://kit.fontawesome.com/18ef578806.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script type="text/javascript" src="mnist.js"></script>
+  <title>MNIST Visualization</title>
+</head>
+
+<body onclick="clear_click()">
+  <h1 id="title">Visualize 3D t-SNE of MNIST Digits Dataset</h1>
+  <svg onwheel="zoom(event)"></svg>
+  <!-- <div id="legand"></div> -->
+  <div id="theme" onclick="changeTheme()"><span><i id="theme-icon" class="fa-solid fa-moon"></i></span></div>
+  <div id="reset" onclick="reset()"><span><i class="fa-solid fa-rotate"></i></span></div>
+  <div id="about" onclick="show_info()"><span><i class="fa-solid fa-circle-info"></i></span></div>
+  <div id="sizer">
+    <input
+      id="size"
+      type="range"
+      min="1.5"
+      max="10"
+      step="0.1"
+      value="4"
+      oninput="changeSize(this.value)"
+    />
+  </div>
+
+  <div id="info-page">
+    <div id="info">
+      <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere
+        officia esse culpa quas reiciendis, porro expedita iusto ratione
+        laboriosam! Expedita qui, iusto sunt cum aspernatur architecto maxime
+        incidunt explicabo rem.</span>
+    </div>
+    <div id="exit" onclick="hide_info()">EXIT</div>
+  </div>
+  <div id="online-status"><div id="online-color"></div><div id="online-text">Python Offline</div></div>
+
+  <script src="script.js"></script>
+
+  <div id="id-input"></div>
+  <py-config style="display: none;">packages = ["scikit-learn"]</py-config>
+  <py-script src="./mnist.py"></py-script>
+  <py-script src="./pyscript.py"></py-script>
+</body>
+
+</html>

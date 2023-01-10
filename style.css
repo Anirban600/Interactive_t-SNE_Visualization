@@ -1,0 +1,330 @@
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+:root {
+  --back-img: url('light.webp');
+  --font-color: rgb(0, 0, 0);
+  --border: rgb(117, 116, 116);
+  --button-back: rgb(255, 236, 236);
+  --button-main: rgb(71, 71, 71);
+  --svg-back: rgb(251, 253, 238);
+  --popup_back: rgb(233, 233, 233);
+}
+
+.dark-theme {
+  --back-img: url('dark.webp');
+  --font-color: rgb(255, 255, 255);
+  --border: rgb(138, 138, 138);
+  --button-back: rgb(71, 71, 71);
+  --button-main: rgb(255, 236, 236);
+  --svg-back: rgb(7, 7, 7);
+  --popup_back: rgb(116, 116, 116);
+}
+
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: var(--back-img);
+  backdrop-filter: blur(7px);
+  background-attachment: fixed;
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all;
+  transition-duration: 0.5s;
+}
+
+#title {
+  position: absolute;
+  top: 3.3vh;
+  width: 80vw;
+  text-align: center;
+  margin-left: 10vw;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 3em;
+  color: var(--font-color);
+  transition: all;
+  transition-duration: 0.5s;
+}
+
+svg {
+  background-color: var(--svg-back);
+  margin-left: 20vw;
+  margin-top: 17vh;
+  width: 60vw;
+  height: 70vh;
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0px 20px 67px -10px rgba(0, 0, 0, 0.75);
+  transition: all;
+  transition-duration: 0.5s;
+}
+
+div.tooltip {
+  /* set the CSS for tooltip divs */
+  position: absolute;
+  /* reference for measurement */
+  text-align: center;
+  /* align the text to the center */
+  width: 30px;
+  /* set the width of the rectangle */
+  height: 30px;
+  /* set the height of the   rectangle */
+  padding: 2px;
+  /* set a border around the rectangle */
+  font: 12px sans-serif;
+  /* set the font type for the tooltips */
+  background: rgb(255, 255, 255);
+  /* set the colour of the rectangle */
+  border: 1px solid black;
+  /* turn off the border (0px) */
+  border-radius: 5px;
+  /* set how rounded the edges of the rectangle is */
+  pointer-events: none;
+  /* 'none' tells the mouse to ignore the rectangle */
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.65);
+}
+
+div.popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(15px);
+  transition: "scale";
+  transition-duration: 0.3s;
+}
+
+#legand{
+  background-color: var(--svg-back);
+  top: 17vh;
+  left: 83vw;
+  height: 50vh;
+  width: 200px;
+  position: absolute;
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0px 20px 67px -10px rgba(0, 0, 0, 0.75);
+  transition: all;
+  transition-duration: 0.5s;
+}
+
+.container{
+  position: relative;
+  height: 10px;
+  width: 100px;
+  background-color: aqua;
+}
+
+.color{
+  height: 10px;
+  width: 100px;
+}
+
+.label{
+  height: 20px;
+  width: 100px;
+  background-color: red;
+}
+
+
+#theme,
+#reset,
+#about {
+  position: absolute;
+  top: 14.1vh;
+  left: 75vw;
+  height: 2.9vw;
+  width: 2.9vw;
+  border: 2px solid var(--border);
+  border-radius: 0.87vw;
+  text-align: center;
+  background-color: var(--button-back);
+  transition: all;
+  transition-duration: 0.4s;
+}
+
+#theme:hover,
+#reset:hover,
+#about:hover {
+  transform: scale(1.2);
+}
+
+#theme>span,
+#reset>span,
+#about>span {
+  line-height: 2.7vw;
+  color: var(--button-main);
+  font-size: 1.8em;
+}
+
+#theme {
+  left: 71vw;
+}
+
+#reset {
+  left: 67.05vw;
+}
+
+#sizer {
+  position: absolute;
+  top: 15.1vh;
+  left: 55.9vw;
+  height: 1.74vw;
+  width: 9.9vw;
+  border: 2px solid var(--border);
+  border-radius: 14px;
+  background-color: var(--button-back);
+  transition: all;
+  transition-duration: 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#sizer:hover{
+  transform: scale(1.09);
+}
+
+
+.more-details {
+  position: absolute;
+  background-color: var(--popup_back);
+  width: 300px;
+  height: 300px;
+  margin-left: -150px;
+  margin-top: -150px;
+  border: 2px solid var(--border);
+  border-radius: 15px;
+  opacity: 0.7;
+  box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.75);
+}
+
+
+.inner {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 5px;
+  opacity: 1;
+  position: inherit;
+}
+
+#inner-0 {
+  margin-left: 125px;
+  margin-top: 125px;
+}
+
+#inner-1 {
+  margin-left: 125px;
+  margin-top: 20px;
+}
+
+#inner-2 {
+  margin-left: 230px;
+  margin-top: 125px;
+}
+
+#inner-3 {
+  margin-left: 125px;
+  margin-top: 230px;
+}
+
+#inner-4 {
+  margin-left: 20px;
+  margin-top: 125px;
+}
+
+
+#info-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(199, 199, 199, 0.4);
+  backdrop-filter: blur(20px);
+  transform: translateY(-100vh);
+  transition: all;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-out;
+}
+
+#info {
+  width: 50vw;
+  height: 30vh;
+  margin-left: 25vw;
+  margin-top: 25vh;
+  opacity: 0.7;
+  border: 2px solid var(--border);
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.55);
+}
+
+#exit {
+  position: absolute;
+  left: calc((100vw - 200px) / 2);
+  top: 65vh;
+  width: 200px;
+  height: 50px;
+  background-color: rgba(253, 45, 45, 0);
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 2em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--font-color);
+  transition: all;
+  transition-duration: 0.4s;
+}
+
+#exit:hover {
+  background-color: rgba(255, 0, 0, 0.79);
+  font-weight: bold;
+  color: white;
+  box-shadow: 0px 10px 20px 0px rgba(56, 0, 0, 0.55);
+  transform: scale(1.05);
+}
+
+#online-status {
+  margin-left: 41.5vw;
+  margin-top: 1.4vw;
+  width: 17vw;
+  height: 2.3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#online-color {
+  background-color: red;
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  margin-right: 20px;
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.65);
+  transition: all;
+  transition-duration: 0.4s;
+}
+
+#online-text{
+  font-size: 1.2em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: var(--font-color);
+  transition: all;
+  transition-duration: 0.4s;
+}
