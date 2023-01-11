@@ -64,28 +64,19 @@ svg {
   transition-duration: 0.5s;
 }
 
+/* -----------------------------------   Tooltip and Popup   ----------------------------------- */
+
 div.tooltip {
-  /* set the CSS for tooltip divs */
   position: absolute;
-  /* reference for measurement */
   text-align: center;
-  /* align the text to the center */
   width: 30px;
-  /* set the width of the rectangle */
   height: 30px;
-  /* set the height of the   rectangle */
   padding: 2px;
-  /* set a border around the rectangle */
   font: 12px sans-serif;
-  /* set the font type for the tooltips */
   background: rgb(255, 255, 255);
-  /* set the colour of the rectangle */
   border: 1px solid black;
-  /* turn off the border (0px) */
   border-radius: 5px;
-  /* set how rounded the edges of the rectangle is */
   pointer-events: none;
-  /* 'none' tells the mouse to ignore the rectangle */
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.65);
 }
 
@@ -95,43 +86,103 @@ div.popup {
   left: 0;
   width: 100vw;
   height: 100vh;
-  backdrop-filter: blur(15px);
   transition: "scale";
-  transition-duration: 0.3s;
+  transition-duration: 0.4s;
+  z-index: 10;
 }
 
-#legand{
-  background-color: var(--svg-back);
-  top: 17vh;
-  left: 83vw;
-  height: 50vh;
-  width: 200px;
+.blur-view{
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -100;
+}
+
+.more-details {
+  position: absolute;
+  background-color: var(--popup_back);
+  width: 300px;
+  height: 300px;
+  margin-left: -150px;
+  margin-top: -150px;
   border: 2px solid var(--border);
-  border-radius: 20px;
-  box-shadow: 0px 20px 67px -10px rgba(0, 0, 0, 0.75);
-  transition: all;
-  transition-duration: 0.5s;
+  border-radius: 15px;
+  opacity: 0.7;
+  box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.75);
 }
 
-.container{
-  position: relative;
-  height: 10px;
-  width: 100px;
-  background-color: aqua;
+.inner {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 5px;
+  opacity: 1;
+  position: inherit;
 }
 
-.color{
-  height: 10px;
-  width: 100px;
+#inner-0 {
+  margin-left: 125px;
+  margin-top: 125px;
 }
 
-.label{
-  height: 20px;
-  width: 100px;
-  background-color: red;
+#inner-1 {
+  margin-left: 125px;
+  margin-top: 30px;
 }
 
+#inner-2 {
+  margin-left: 220px;
+  margin-top: 125px;
+}
+
+#inner-3 {
+  margin-left: 125px;
+  margin-top: 220px;
+}
+
+#inner-4 {
+  margin-left: 30px;
+  margin-top: 125px;
+}
+
+.s-inner{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 1.1em;
+  position: absolute;
+  width: 50px;
+  text-align: center;
+  color: var(--font-color);
+}
+
+#s-inner-0{
+  margin-left: 127px;
+  margin-top: 175px;
+}
+
+#s-inner-1{
+  margin-left: 127px;
+  margin-top: 80px;
+}
+
+#s-inner-2{
+  margin-left: 222px;
+  margin-top: 175px;
+}
+
+#s-inner-3{
+  margin-left: 127px;
+  margin-top: 270px;
+}
+
+#s-inner-4{
+  margin-left: 32px;
+  margin-top: 175px;
+}
+
+/* -----------------------------------   Buttons and Info Page   ----------------------------------- */
 
 #theme,
 #reset,
@@ -191,94 +242,6 @@ div.popup {
   transform: scale(1.09);
 }
 
-
-.more-details {
-  position: absolute;
-  background-color: var(--popup_back);
-  width: 300px;
-  height: 300px;
-  margin-left: -150px;
-  margin-top: -150px;
-  border: 2px solid var(--border);
-  border-radius: 15px;
-  opacity: 0.7;
-  box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.75);
-}
-
-
-.inner {
-  width: 50px;
-  height: 50px;
-  border: 1px solid black;
-  border-radius: 5px;
-  opacity: 1;
-  position: inherit;
-}
-
-#inner-0 {
-  margin-left: 125px;
-  margin-top: 125px;
-}
-
-#inner-1 {
-  margin-left: 125px;
-  margin-top: 30px;
-}
-
-#inner-2 {
-  margin-left: 220px;
-  margin-top: 125px;
-}
-
-#inner-3 {
-  margin-left: 125px;
-  margin-top: 220px;
-}
-
-#inner-4 {
-  margin-left: 30px;
-  margin-top: 125px;
-}
-
-
-.s-inner{
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bolder;
-  font-size: 1.1em;
-  position: absolute;
-  width: 50px;
-  text-align: center;
-  color: var(--font-color);
-}
-
-#s-inner-0{
-  margin-left: 127px;
-  margin-top: 175px;
-}
-
-#s-inner-1{
-  margin-left: 127px;
-  margin-top: 80px;
-}
-
-#s-inner-2{
-  margin-left: 222px;
-  margin-top: 175px;
-}
-
-#s-inner-3{
-  margin-left: 127px;
-  margin-top: 270px;
-}
-
-#s-inner-4{
-  margin-left: 32px;
-  margin-top: 175px;
-}
-
-
-
-
 #info-page {
   position: absolute;
   top: 0;
@@ -337,6 +300,8 @@ div.popup {
   transform: scale(1.05);
 }
 
+/* -----------------------------------   Online Status and Legend   ----------------------------------- */
+
 #online-status {
   margin-left: 41.5vw;
   margin-top: 1.4vw;
@@ -366,3 +331,35 @@ div.popup {
   transition: all;
   transition-duration: 0.4s;
 }
+
+/* #legand{
+  background-color: var(--svg-back);
+  top: 17vh;
+  left: 83vw;
+  height: 50vh;
+  width: 200px;
+  position: absolute;
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0px 20px 67px -10px rgba(0, 0, 0, 0.75);
+  transition: all;
+  transition-duration: 0.5s;
+}
+
+.container{
+  position: relative;
+  height: 10px;
+  width: 100px;
+  background-color: aqua;
+}
+
+.color{
+  height: 10px;
+  width: 100px;
+}
+
+.label{
+  height: 20px;
+  width: 100px;
+  background-color: red;
+} */

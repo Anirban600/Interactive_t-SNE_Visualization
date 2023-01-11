@@ -15,18 +15,11 @@ var svg = d3
   .append("g");
 
 // var color = d3.scaleOrdinal(d3.schemeCategory20);
-var color = [
-  "#fff100",
-  "#ff8c00",
-  "#e81123",
-  "#ec008c",
-  "#68217a",
-  "#00188f",
-  "#00bcf2",
-  "#00b294",
-  "#009e49",
-  "#bad80a",
-];
+var color = ["#fff100", "#ff8c00", "#e81123", "#ec008c", "#68217a",
+             "#00188f", "#00bcf2", "#00b294", "#009e49", "#bad80a"];
+
+// Randomize the colors
+// color = color.sort(()=>Math.random()-0.5);
 
 var mx, my, mouseX, mouseY;
 
@@ -50,8 +43,12 @@ var div_detail = d3
   .select("body")
   .append("div")
   .attr("class", "popup")
-  // .style("display", "none");
   .style("transform", "scale(0)");
+
+var blur_view = d3
+  .select("body")
+  .append("div")
+  .attr("class", "blur-view");
 
 function CreateScatter(data) {
   var points = svg.selectAll("circle").data(data, (data) => data.id);
@@ -84,22 +81,25 @@ function onClick(d) {
   semaphore = true;
   document.getElementById("id-input").innerText = d.id + "";
   let content = '<div class="more-details" style="left:' + d3.event.pageX + 'px; top:' + d3.event.pageY + 'px;">' +
-      '<img class="inner" id="inner-0" src="' + d.path + '">' +
-      '<span class="s-inner" id="s-inner-0">' + d.label + '</span>' +
-      '<img class="inner" id="inner-1" src="">' +
-      '<span class="s-inner" id="s-inner-1"></span>' +
-      '<img class="inner" id="inner-2" src="">' +
-      '<span class="s-inner" id="s-inner-2"></span>' +
-      '<img class="inner" id="inner-3" src="">' +
-      '<span class="s-inner" id="s-inner-3"></span>' +
-      '<img class="inner" id="inner-4" src="">' +
-      '<span class="s-inner" id="s-inner-4"></span>' +
+          '<img class="inner" id="inner-0" src="' + d.path + '">' +
+          '<span class="s-inner" id="s-inner-0">' + d.label + '</span>' +
+          '<img class="inner" id="inner-1" src="">' +
+          '<span class="s-inner" id="s-inner-1"></span>' +
+          '<img class="inner" id="inner-2" src="">' +
+          '<span class="s-inner" id="s-inner-2"></span>' +
+          '<img class="inner" id="inner-3" src="">' +
+          '<span class="s-inner" id="s-inner-3"></span>' +
+          '<img class="inner" id="inner-4" src="">' +
+          '<span class="s-inner" id="s-inner-4"></span>' +
       '</div>';
+  
   div_detail
     .html(content)
-    // .style("display", "block");
     .style("transform-origin", d3.event.pageX + "px " + d3.event.pageY + "px")
     .style("transform", "scale(1)");
+    
+    blur_view.style("backdrop-filter", "blur(15px)");
+    blur_view.style("z-index", "9");
 }
 
 function UpdateScatter() {
@@ -173,8 +173,11 @@ function reset() {
 
 function clear_click() {
   if (semaphore) semaphore = false;
-  // else div_detail.style("display", "none");
-  else div_detail.style("transform", "scale(0)");
+  else {
+    div_detail.style("transform", "scale(0)");
+    blur_view.style("backdrop-filter", "blur(0px)");
+    blur_view.style("z-index", "-100");
+  }
 }
 
 function show_info(){
@@ -190,21 +193,21 @@ function changeSize(val){
   svg.selectAll("circle").attr("r", pointer_size);
 }
 
-function fill_legend(){
-  var box = document.getElementById("legand");
-  for(let i = 0; i < 10; i++){
-    let container = document.createElement("div");
-    container.className = "container";
-    let color_div = document.createElement("div");
-    color_div.className = "color";
-    color_div.style.backgroundColor = color[i];
-    let label = document.createElement("div");
-    label.className = "label";
-    label.innerText = (i + 1) + "";
-    container.appendChild(color_div);
-    container.appendChild(label);
-    box.appendChild(container);
-  }
-}
+// function fill_legend(){
+//   var box = document.getElementById("legand");
+//   for(let i = 0; i < 10; i++){
+//     let container = document.createElement("div");
+//     container.className = "container";
+//     let color_div = document.createElement("div");
+//     color_div.className = "color";
+//     color_div.style.backgroundColor = color[i];
+//     let label = document.createElement("div");
+//     label.className = "label";
+//     label.innerText = (i + 1) + "";
+//     container.appendChild(color_div);
+//     container.appendChild(label);
+//     box.appendChild(container);
+//   }
+// }
 
-fill_legend();
+// fill_legend();
