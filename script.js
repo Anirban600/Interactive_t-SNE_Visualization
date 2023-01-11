@@ -85,11 +85,16 @@ function onClick(d) {
   document.getElementById("id-input").innerText = d.id + "";
   let content = '<div class="more-details" style="left:' + d3.event.pageX + 'px; top:' + d3.event.pageY + 'px;">' +
       '<img class="inner" id="inner-0" src="' + d.path + '">' +
+      '<span class="s-inner" id="s-inner-0">' + d.label + '</span>' +
       '<img class="inner" id="inner-1" src="">' +
+      '<span class="s-inner" id="s-inner-1"></span>' +
       '<img class="inner" id="inner-2" src="">' +
+      '<span class="s-inner" id="s-inner-2"></span>' +
       '<img class="inner" id="inner-3" src="">' +
+      '<span class="s-inner" id="s-inner-3"></span>' +
       '<img class="inner" id="inner-4" src="">' +
-    '</div>';
+      '<span class="s-inner" id="s-inner-4"></span>' +
+      '</div>';
   div_detail
     .html(content)
     // .style("display", "block");

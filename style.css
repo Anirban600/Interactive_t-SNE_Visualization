@@ -222,23 +222,61 @@ div.popup {
 
 #inner-1 {
   margin-left: 125px;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 #inner-2 {
-  margin-left: 230px;
+  margin-left: 220px;
   margin-top: 125px;
 }
 
 #inner-3 {
   margin-left: 125px;
-  margin-top: 230px;
+  margin-top: 220px;
 }
 
 #inner-4 {
-  margin-left: 20px;
+  margin-left: 30px;
   margin-top: 125px;
 }
+
+
+.s-inner{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 1.1em;
+  position: absolute;
+  width: 50px;
+  text-align: center;
+  color: var(--font-color);
+}
+
+#s-inner-0{
+  margin-left: 127px;
+  margin-top: 175px;
+}
+
+#s-inner-1{
+  margin-left: 127px;
+  margin-top: 80px;
+}
+
+#s-inner-2{
+  margin-left: 222px;
+  margin-top: 175px;
+}
+
+#s-inner-3{
+  margin-left: 127px;
+  margin-top: 270px;
+}
+
+#s-inner-4{
+  margin-left: 32px;
+  margin-top: 175px;
+}
+
+
 
 
 #info-page {

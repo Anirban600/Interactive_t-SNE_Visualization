@@ -21,6 +21,7 @@ def runPython(a):
         n_label = label[n]
         path = f"mnist/{str(n_label)}/{n}.png"
         document.getElementById(f"inner-{i}").src = path
+        document.getElementById(f"s-inner-{i}").innerText = str(label[n])
 
 function_proxy = create_proxy(runPython)
 for elem in document.getElementsByClassName("_3d"):
