@@ -5,23 +5,27 @@
 }
 
 :root {
-  --back-img: url('light.webp');
+  --back-img: url('assets/light.webp');
   --font-color: rgb(0, 0, 0);
   --border: rgb(117, 116, 116);
   --button-back: rgb(255, 236, 236);
   --button-main: rgb(71, 71, 71);
   --svg-back: rgb(251, 253, 238);
   --popup_back: rgb(233, 233, 233);
+  --legand-back: rgb(233, 233, 233);
+  --legand-font: rgb(27, 27, 27);
 }
 
 .dark-theme {
-  --back-img: url('dark.webp');
+  --back-img: url('assets/dark.webp');
   --font-color: rgb(255, 255, 255);
   --border: rgb(138, 138, 138);
-  --button-back: rgb(71, 71, 71);
+  --button-back: rgb(55, 55, 55);
   --button-main: rgb(255, 236, 236);
   --svg-back: rgb(7, 7, 7);
   --popup_back: rgb(116, 116, 116);
+  --legand-back: rgb(96, 96, 96);
+  --legand-font: rgb(236, 236, 236);
 }
 
 
@@ -332,34 +336,54 @@ div.popup {
   transition-duration: 0.4s;
 }
 
-/* #legand{
-  background-color: var(--svg-back);
-  top: 17vh;
-  left: 83vw;
-  height: 50vh;
-  width: 200px;
+#legand{
+  background-color: var(--legand-back);
+  top: 31vh;
+  left: 78.6vw;
+  height: 38vh;
+  width: 50px;
   position: absolute;
   border: 2px solid var(--border);
-  border-radius: 20px;
-  box-shadow: 0px 20px 67px -10px rgba(0, 0, 0, 0.75);
+  border-radius: 15px;
+  opacity: 1;
+  box-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.65);
   transition: all;
-  transition-duration: 0.5s;
+  transition-duration: 0.4s;
+}
+
+#legand-title{
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: bolder;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  color: var(--legand-font);
+  transition: all;
+  transition-duration: 0.4s;
 }
 
 .container{
-  position: relative;
-  height: 10px;
-  width: 100px;
-  background-color: aqua;
-}
-
-.color{
-  height: 10px;
-  width: 100px;
-}
-
-.label{
+  margin-bottom: 10px;
   height: 20px;
-  width: 100px;
-  background-color: red;
-} */
+}
+
+.color-div{
+  margin: 2.5px 0 0 8px;
+  width: 15px;
+  height: 15px;
+  float: left;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.label-div{
+  width: 18px;
+  height: 20px;
+  float: right;
+  line-height: 20px;
+  font-weight: bolder;
+  color: var(--legand-font);
+  transition: all;
+  transition-duration: 0.4s;
+}

@@ -193,21 +193,21 @@ function changeSize(val){
   svg.selectAll("circle").attr("r", pointer_size);
 }
 
-// function fill_legend(){
-//   var box = document.getElementById("legand");
-//   for(let i = 0; i < 10; i++){
-//     let container = document.createElement("div");
-//     container.className = "container";
-//     let color_div = document.createElement("div");
-//     color_div.className = "color";
-//     color_div.style.backgroundColor = color[i];
-//     let label = document.createElement("div");
-//     label.className = "label";
-//     label.innerText = (i + 1) + "";
-//     container.appendChild(color_div);
-//     container.appendChild(label);
-//     box.appendChild(container);
-//   }
-// }
+function fill_legend(){
+  var box = document.getElementById("legand");
+  for(let i = 0; i < 10; i++){
+    let container = document.createElement("div");
+    container.className = "container";
+    let color_div = document.createElement("div");
+    color_div.className = "color-div";
+    color_div.style.backgroundColor = color[i];
+    let label_div = document.createElement("div");
+    label_div.className = "label-div";
+    label_div.innerText = i + "";
+    container.appendChild(color_div);
+    container.appendChild(label_div);
+    box.appendChild(container);
+  }
+}
 
-// fill_legend();
+fill_legend();

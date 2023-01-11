@@ -15,7 +15,6 @@
 <body onclick="clear_click()">
   <h1 id="title">Visualize 3D t-SNE of MNIST Digits Dataset</h1>
   <svg onwheel="zoom(event)"></svg>
-  <!-- <div id="legand"></div> -->
   <div id="theme" onclick="changeTheme()"><span><i id="theme-icon" class="fa-solid fa-moon"></i></span></div>
   <div id="reset" onclick="reset()"><span><i class="fa-solid fa-rotate"></i></span></div>
   <div id="about" onclick="show_info()"><span><i class="fa-solid fa-circle-info"></i></span></div>
@@ -31,6 +30,10 @@
     />
   </div>
 
+  <div id="online-status"><div id="online-color"></div><div id="online-text">Python Offline</div></div>
+
+  <div id="legand"><div id="legand-title">Labels</div></div>
+
   <div id="info-page">
     <div id="info">
       <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere
@@ -40,11 +43,11 @@
     </div>
     <div id="exit" onclick="hide_info()">EXIT</div>
   </div>
-  <div id="online-status"><div id="online-color"></div><div id="online-text">Python Offline</div></div>
+
+  <div id="id-input"></div>
 
   <script src="script.js"></script>
 
-  <div id="id-input"></div>
   <py-config style="display: none;">packages = ["scikit-learn"]</py-config>
   <py-script src="./mnist.py"></py-script>
   <py-script src="./pyscript.py"></py-script>
