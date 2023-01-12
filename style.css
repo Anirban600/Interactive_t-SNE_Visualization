@@ -57,10 +57,10 @@ body {
 
 svg {
   background-color: var(--svg-back);
-  margin-left: 20vw;
+  margin-left: 10vw;
   margin-top: 17vh;
-  width: 60vw;
-  height: 70vh;
+  width: 80vw;
+  height: 75vh;
   border: 2px solid var(--border);
   border-radius: 20px;
   box-shadow: 0px 20px 67px -10px rgba(0, 0, 0, 0.75);
@@ -193,7 +193,7 @@ div.popup {
 #about {
   position: absolute;
   top: 14.1vh;
-  left: 75vw;
+  left: 85vw;
   height: 2.9vw;
   width: 2.9vw;
   border: 2px solid var(--border);
@@ -219,17 +219,17 @@ div.popup {
 }
 
 #theme {
-  left: 71vw;
+  left: 81vw;
 }
 
 #reset {
-  left: 67.05vw;
+  left: 77.05vw;
 }
 
 #sizer {
   position: absolute;
   top: 15.1vh;
-  left: 55.9vw;
+  left: 65.9vw;
   height: 1.74vw;
   width: 9.9vw;
   border: 2px solid var(--border);
@@ -307,39 +307,51 @@ div.popup {
 /* -----------------------------------   Online Status and Legend   ----------------------------------- */
 
 #online-status {
-  margin-left: 41.5vw;
-  margin-top: 1.4vw;
-  width: 17vw;
-  height: 2.3vw;
+  position: absolute;
+  left: 88.5vw;
+  top: 24vh;
+  width: 3.26vw;
+  height: 3.26vw;
+  background-color: var(--legand-back);
+  border: 2px solid var(--border);
+  border-radius: 0.9045vw;
+  box-shadow: 0px 7px 25px -10px rgba(0, 0, 0, 0.65);
   display: flex;
-  justify-content: center;
+  justify-content:space-around;
   align-items: center;
+  flex-direction: column;
+  transition: all;
+  transition-duration: 0.4s;
 }
 
 #online-color {
   background-color: red;
-  width: 0.9648vw;
-  height: 0.9648vw;
-  border-radius: 0.4824vw;
-  margin-right: 1.206vw;
-  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.65);
+  margin-top: 0.5vh;
+  width: 0.9vw;
+  height: 0.9vw;
+  border-radius: 0.45vw;
+  border: 1px solid black;
+  box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.45);
   transition: all;
   transition-duration: 0.4s;
 }
 
 #online-text{
-  font-size: 1.2em;
+  margin-top: 0.3vh;
+  font-size: 0.6em;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   color: var(--font-color);
   transition: all;
   transition-duration: 0.4s;
+  text-align: center;
+  line-height: 1.2vh;
 }
 
 #legand{
   background-color: var(--legand-back);
-  top: 31vh;
-  left: 78.5vw;
+  top: 34.5vh;
+  left: 88.5vw;
   height: 38.5vh;
   width: 3.26vw;
   position: absolute;

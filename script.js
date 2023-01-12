@@ -1,7 +1,7 @@
-var width = document.documentElement.clientWidth * 0.6;
-var height = document.documentElement.clientHeight * 0.7;
+var width_center = document.documentElement.clientWidth * 0.4;
+var height_center = document.documentElement.clientHeight * 0.375;
 
-var origin = [width / 2, height / 2];
+var origin = [width_center, height_center];
 var scale = 12;
 var beta = 0;
 var alpha = 0;
