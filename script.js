@@ -169,6 +169,8 @@ function reset() {
     .rotateX(-startAngle)
     .scale(scale)(my_data);
   UpdateScatter();
+  changeSize(pointer_size);
+  document.getElementById("size").value = pointer_size;
 }
 
 function clear_click() {

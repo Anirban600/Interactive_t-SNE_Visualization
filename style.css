@@ -260,12 +260,16 @@ div.popup {
   background-color: var(--button-main);
   height: 0.35rem;
   border-radius: 0.17rem;
+  transition: all;
+  transition-duration: 0.5s;
 }
 
 .slider::-moz-range-track {
   background-color: var(--button-main);
   height: 0.35rem;
   border-radius: 0.17rem;
+  transition: all;
+  transition-duration: 0.5s;
 }
 
 .slider::-webkit-slider-thumb {
@@ -277,6 +281,8 @@ div.popup {
   width: 1rem;
   border-radius: 0.5rem;
   border: 2px solid var(--border);
+  transition: all;
+  transition-duration: 0.5s;
 }
 
 .slider::-moz-range-thumb {
@@ -286,6 +292,8 @@ div.popup {
   width: 1rem;
   border-radius: 0.5rem;
   border: 2px solid var(--border);
+  transition: all;
+  transition-duration: 0.5s;
 }
 
 #info-page {
